@@ -1,0 +1,75 @@
+/*
+  Typography
+*/
+  @mixin font-size($sizeValue: $alphaFontSize) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
+  }
+
+  @mixin line-height($sizeValue: $alphaLineHeight) {
+    line-height: $sizeValue + px;
+    line-height: ($sizeValue / 10) + rem;
+  }
+  
+/*
+  Padding and Margins
+*/
+  @mixin margin($top: false, $right: false, $bottom: false, $left: false) {
+    @if $top == false {
+      margin: 0px;
+      margin: 0rem;
+    } @else if $right == false {
+      margin: $top + px;
+      margin: ($top / 10) + rem;
+    } @else if $bottom == false {
+      margin: $top + px $right + px;
+      margin: ($top / 10) + rem ($right / 10) + rem;
+    } @else if $left == false {
+      margin: $top + px $right + px $bottom + px;
+      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+    } @else {
+      margin: $top + px $right + px $bottom + px $left + px;
+      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+    }
+  }
+  @mixin padding($top: false, $right: false, $bottom: false, $left: false) {
+    @if $top == false {
+      padding: 0px;
+      padding: 0rem;
+    } @else if $right == false {
+      padding: $top + px;
+      padding: ($top / 10) + rem;
+    } @else if $bottom == false {
+      padding: $top + px $right + px;
+      padding: ($top / 10) + rem ($right / 10) + rem;
+    } @else if $left == false {
+      padding: $top + px $right + px $bottom + px;
+      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+    } @else {
+      padding: $top + px $right + px $bottom + px $left + px;
+      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+    }
+  }
+/*
+  General Styling
+*/
+  @mixin translate3d($x: 0, $y: 0, $z: 0) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    -ms-transform: translate3d($x, $y, $z);
+    -o-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+  }
+  @mixin backface-visibility($value) {
+    -webkit-backface-visibility: $value;
+    -moz-backface-visibility: $value;
+    -ms-backface-visibility: $value;
+    -o-backface-visibility: $value;
+    backface-visibility: $value;
+  }
+  @mixin transitionTransform($duration, $timing: linear, $delay: 0) {
+    -webkit-transition: -webkit-transform $duration $timing;
+    -moz-transition: -moz-transform $duration $timing;
+    -o-transition: -o-transform $duration $timing;
+    transition: transform $duration $timing;
+  }

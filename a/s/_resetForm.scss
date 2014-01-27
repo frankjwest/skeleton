@@ -1,0 +1,14 @@
+/*
+  Form reset - Shouldn't need to be edited
+*/
+  legend { white-space: normal; *margin-left: -7px; }
+  button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; box-sizing: content-box; -ms-box-sizing: content-box; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; }
+  button, input { line-height: normal; }
+  button, select { text-transform: none; }
+  button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; *overflow: visible; }
+  button[disabled], html input[disabled] { cursor: default; }
+  input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px; *width: 13px; }
+  input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; -ms-box-sizing: content-box; box-sizing: content-box; }
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+  button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+  textarea { overflow: auto; vertical-align: top; }

@@ -1,0 +1,38 @@
+@mixin createColumns($total: 16) {
+  $count: 1;
+
+  @while $count <= $total {
+    .col-#{$count}-#{$total} {
+      width: 100 / $total * $count * 1%;
+    }
+    .lt-ie8 .col-#{$count}-#{$total} {
+      width: 100 / $total * $count - 4 * 1%;
+      padding: 0 2%;
+    }
+    $count: $count + 1;
+  }
+  
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.lt-ie7 {
+  width: 960px;
+}
+  
+.grid {
+  @extend %clearFix;
+  margin: 0 auto;
+  max-width: $gridMaxWidth;
+}
+
+.column {
+  float: left;
+  @include padding(0, $gridPadding); 
+}
+
+@include createColumns($gridColumns);

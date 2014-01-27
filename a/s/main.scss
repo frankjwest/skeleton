@@ -1,0 +1,266 @@
+@import '_variables';
+@import '_mixins';
+@import '_placeholders';
+@import '_reset';
+@import '_grid';
+@import '_navigation';
+/*
+  Base
+*/
+  /*
+    Typography
+  */
+    /*
+      Custom fonts
+    */
+    /* Template, uncomment and replace `myFont` when used
+    @font-face { font-family:'myFont'; font-weight: 400; font-style: normal;
+      src: url(../fonts/myFont.eot);
+      src: url(../fonts/myFont?#iefix) format('embedded-opentype'),
+      url(../fonts/myFont.woff) format('woff'),
+      url(../fonts/myFont.ttf) format('truetype'),
+      url(../fonts/myFont.svg#OpenSansLight) format('svg');
+    }
+    */
+    /*
+      Standard
+    */
+      html {
+        font-size: 62.5%;
+      }
+
+      li,
+      td,
+      th,
+      p,
+      q,
+      body,
+      button,
+      input,
+      select,
+      textarea,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figcaption,
+      blockquote,
+      form,
+      fieldset,
+      legend,
+      label {
+        font-family: $alphaFontFamily;
+        color: $alphaColor;
+        @include font-size($alphaFontSize);
+        @include line-height($alphaLineHeight);
+        @include margin(0);
+        @include padding(0);
+      }
+
+      .primaryHeader {
+        color: $alphaColor;
+      }
+      .secondaryHeader {
+        color: $alphaColor;
+      }
+      .tertiaryHeader {
+        color: $alphaColor;
+      }
+      .quarternaryHeader {
+        color: $alphaColor;
+      }
+
+      p,
+      pre,
+      blockquote {
+        @include margin(0, 0, $alphaFontSize, 0);
+        @include padding(0);
+      }
+      
+      figcaption {  }
+    
+  /*
+    Links
+  */
+    a { }
+    a:hover, a.hover {  }
+    a:focus, a.focus {  }
+    a:active, a.active {  }
+
+  /*
+    Buttons
+  */
+    .primaryButton {  }
+    .primaryButton:hover,
+    .primaryButton.hover,
+    .primaryButton:focus,
+    .primaryButton.focus {  }
+    .primaryButton:active,
+    .primaryButton.active {  }
+    
+    .secondaryButton {  }
+    .secondaryButton:hover {  }
+    .secondaryButton:focus {  }
+    .secondaryButton:active {  }
+    
+    .smallButton {  }
+    .mediumButton {  }
+    .largeButton {  }
+  
+  /*
+    Forms
+  */
+    @import '_resetForm';
+    /*
+      Form styling
+    */
+      form {
+        border: 0;
+      }
+        fieldset {
+          border: 0;
+        }
+          legend  {
+            border: 0;
+          }
+          label {
+            cursor: pointer;
+          }
+          input {  }
+          input.text {  }
+          input.checkbox {  }
+          input.radio {  }
+          textarea.textarea {  }
+          select.select {  }
+          
+  /*
+    Lists
+  */
+    dl,
+    menu,
+    ol,
+    ul,
+    dd {
+      @include margin(0, 0, $alphaFontSize, 0);
+      @include padding(0, 0, 0, $alphaFontSize);
+    }
+      li,
+      dt {
+        @include margin(0, 0, $alphaFontSize, 0);
+        @include padding(0);
+      }
+        li ul {
+          @include padding($alphaFontSize, 0, 0, $alphaFontSize);
+        }
+  
+  /*
+    Highlighting
+  */
+    ::-moz-selection {
+      background: #323232;
+      color: #ffffff;
+      text-shadow: none;
+    }
+    ::selection {
+      background: #323232;
+      color: #ffffff;
+      text-shadow: none;
+    }
+    
+  /*
+    Tools and Common Classes
+  */
+    hr {
+      border: 1px solid #000000;
+      border-width: 0 0 1px 0;
+      @include margin(0, 0, $alphaFontSize);
+      -moz-box-sizing: content-box;
+      -ms-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+      height: 1px;
+      padding: 0;
+      background: none;
+    }
+    mark {
+      background: #ff0;
+      color: #000;
+    }
+    
+    .hidden {
+      display: none !important;
+      visibility: hidden;
+    }
+    .visuallyHidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    .visuallyHidden.focusable:active,
+    .visuallyHidden.focusable:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+    .invisible {
+      visibility: hidden;
+    }
+
+/*
+  Layout
+*/
+  /*
+    Core Layout
+  */
+    /*
+      Header
+    */
+    
+    
+    /*
+      Body
+    */
+      #pageWrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+        #outerContainer {
+          position: relative;
+          width: 100%;
+          left: 0 !important;
+          @include translate3d(0);
+          @include transitionTransform(500ms, ease);
+          @include backface-visibility(hidden);
+        }
+
+    
+    /*
+      Footer
+    */
+    
+    
+    /*
+      Page Specific
+    */
+
+
+
+/*
+  Widgets
+*/
+
+
+
+

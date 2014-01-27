@@ -1,0 +1,38 @@
+/*
+  Layout
+*/
+  /*
+    Grid configuration
+  */
+    $gridPadding: 10;
+    $gridColumns: 16;
+    $gridMaxWidth: 1200px;
+  /*
+    Navigation
+  */
+    $offScreenPercent: 80;
+  
+/*
+  Typography
+*/
+  /*
+    Font
+  */
+    $alphaFontFamily: 'arial, sans-serif';
+
+  /*
+    Size
+  */
+    $alphaFontSize: 14; /* Primary body text */
+    $alphaLineHeight: 21; /* Primary line height of body text */
+  
+
+/*
+  Colours
+*/
+  /*
+    Base
+  */
+  $alphaColor: #333;
+  $betaColor: #333;
+  $gammaColor: #333;

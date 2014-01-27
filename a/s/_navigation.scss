@@ -1,0 +1,39 @@
+/*
+  Off screen navigation
+*/
+.showMenu #outerContainer {
+  left: 0;
+  @include translate3d(80%);
+}
+
+.lt-ie10 .showMenu #outerContainer {
+  left: #{$offScreenPercent}% !important;
+}
+
+.toggleMenuOff {
+  display: none;
+}
+
+.showMenu .toggleMenuOff {
+  display: block;
+}
+
+.showMenu #primaryNav {
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  left: 0;
+  @include translate3d(-100%);
+  @include backface-visibility(hidden);
+}
+
+.lt-ie10 #primaryNav {
+  left: -100%;
+}
+
+.lt-ie10 .showMenu #primaryNav {
+  left: -80%;
+}
+
