@@ -260,6 +260,19 @@
 /*
   Widgets
 */
+  /*
+    Skip navigation
+  */
+  .skipNavigation:active,
+  .skipNavigation:focus {
+    border: 1px solid #333333;
+    background: #ffffff;
+    display: block;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
 
 
