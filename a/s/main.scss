@@ -203,8 +203,8 @@
       position: absolute;
       width: 1px;
     }
-    .visuallyHidden.focusable:active,
-    .visuallyHidden.focusable:focus {
+    .visuallyHidden:active,
+    .visuallyHidden:focus {
       clip: auto;
       height: auto;
       margin: 0;
@@ -260,7 +260,6 @@
 /*
   Widgets
 */
-
 
 
 
