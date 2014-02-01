@@ -4,43 +4,216 @@
   /*
     General
   */
-    article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
-    audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
-    audio:not([controls]) { display: none; height: 0; }
-    [hidden] { display: none; }
-    html { background: #fff; color: #000; font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    body { margin: 0; width: 100%; position: relative; }
-    abbr[title] { border-bottom: 1px dotted; }
-    b, strong { font-weight: bold; }
-    dfn { font-style: italic; }
-    code, kbd, pre, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
-    pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-    q { quotes: none; }
-    q:before, q:after { content: ''; content: none; }
-    small { font-size: 80%; }
-    sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-    sup { top: -0.5em; }
-    sub { bottom: -0.25em; }
-    img { border: 0; -ms-interpolation-mode: bicubic; }
-    svg:not(:root) { overflow: hidden; }
-    figure { margin: 0; }
-    table { border-collapse: collapse; border-spacing: 0; }
-    a:hover, a.hover, a:active, a.active { outline: 0; }
-    a:focus, a.focus { outline: thin dotted; }
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+    
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+    }
+    
+    .lt-ie8 {
+      audio,
+      canvas,
+      video {
+        display: inline;
+        zoom: 1;
+      }
+    }
+    
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    
+    [hidden] {
+      display: none;
+    }
+    
+    html,
+    body {
+      min-height: 100%;
+      height: auto !important; /* ie6 */
+      height: 100%; /* ie6 */
+    } 
+    
+    html {
+      background: #fff;
+      color: #000; 
+      font-size: 62.5%;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    body {
+      margin: 0;
+      position: relative;
+      width: 100%;
+    }
+    
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+    
+    b,
+    strong {
+      font-weight: bold;
+    }
+    
+    dfn {
+      font-style: italic;
+    }
+    
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, serif; _font-family: 'courier new', monospace;
+      font-size: 1em;    
+    }
+    
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    
+    q {
+      quotes: none;
+      
+      &:before,
+      &:after {
+        content: '';
+        content: none;
+      }
+    }
+    
+    small {
+      font-size: 80%;
+    }
+    
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+    
+    img {
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+    }
+    
+    svg:not(:root) {
+      overflow: hidden;
+    }
+    
+    figure {
+      margin: 0;
+    }
+    
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    
+    a {
+      &:active,
+      &.active,
+      &:hover,
+      &.hover {
+        outline: 0;
+      }
+            
+      &:focus,
+      &.focus {
+        outline: thin dotted;
+      }
+    }
   /*
     Print
   */
     @media print {
-      * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
-      a, a:visited { text-decoration: underline; }
-      a[href]:after { content: " (" attr(href) ")"; }
-      abbr[title]:after { content: " (" attr(title) ")"; }
-      .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-      pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-      thead { display: table-header-group; }
-      tr, img { page-break-inside: avoid; }
-      img { max-width: 100% !important; }
-      @page { margin: 0.5cm; }
-      p, h2, h3 { orphans: 3; widows: 3; }
-      h2, h3 { page-break-after: avoid; }
+      * {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: #000 !important;
+        text-shadow: none !important;
+      }
+      
+      a,
+      a:visited {
+        text-decoration: underline;
+      }
+      
+      a[href]:after {
+        content: " (" attr(href) ")";
+      }
+      
+      abbr[title]:after {
+        content: " (" attr(title) ")";
+      }
+      
+      .ir a:after,
+      a[href^="javascript:"]:after,
+      a[href^="#"]:after {
+        content: "";
+      }
+      
+      blockquote,
+      pre  {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+      }
+      
+      thead {
+        display: table-header-group;
+      }
+      
+      img,
+      tr {
+        page-break-inside: avoid;
+      }
+      
+      img {
+        max-width: 100% !important;
+      }
+      
+      @page {
+        margin: 0.5cm;
+      }
+      
+      h2,
+      h3,
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+      
+      h2,
+      h3 {
+        page-break-after: avoid;
+      }
     }

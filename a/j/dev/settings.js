@@ -2,20 +2,30 @@
 * settings                                                 v 1.0 *
 *****************************************************************/
 
-var fWcore = fWcore || {};
+var fwCore = fwCore || {};
 
 /*****************************************************************
 * settings                                                 v 1.0 *
 *                                                                *
-* version:        The fwCore version number                      *
 * offScreenMenu:  true | false                                   *
 *                 Is offscreen menu being used for this site?    *
 * isSupported:    Object containing supported CSS features       *
+* dom:            Object containing DOM elements which have been *
+*                 created by plugins.                            *
+*                 true = exists | false = not created yet        *
+* pluginsInit     Object containing plugins which have been      *
+*                 initialised.                                   *
 *                                                                *
 *****************************************************************/
 
-fWcore.settings = {
-  version: 1.0,
+fwCore.settings = {
   offScreenMenu: true,
-  isSupported: {}
+  isSupported: {},
+  dom: {
+    pageWash: false,
+    modalWindow: false
+  },
+  pluginsInit: {
+    modalWindow: false
+  }
 };

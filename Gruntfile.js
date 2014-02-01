@@ -76,6 +76,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default', ['connect', 'watch', 'concat', 'uglify', 'sass:dev', 'sass:build']);
+  grunt.registerTask('default', ['connect', 'watch', 'concat', 'uglify', 'sass:dev']);
 
 };

@@ -4,6 +4,12 @@
 @import '_reset';
 @import '_grid';
 @import '_navigation';
+
+/*
+  Plugins
+*/
+  @import '_modal-window';
+
 /*
   Base
 */
@@ -25,34 +31,30 @@
     /*
       Standard
     */
-      html {
-        font-size: 62.5%;
-      }
-
-      li,
-      td,
-      th,
-      p,
-      q,
+      blockquote,
       body,
       button,
-      input,
-      select,
-      textarea,
+      fieldset,
+      figcaption,
+      form,
       h1,
       h2,
       h3,
       h4,
       h5,
       h6,
-      figcaption,
-      blockquote,
-      form,
-      fieldset,
+      input,
+      label,
       legend,
-      label {
-        font-family: $alphaFontFamily;
+      li,
+      p,
+      q,
+      select,
+      td,
+      textarea,
+      th {
         color: $alphaColor;
+        font-family: $alphaFontFamily;
         @include font-size($alphaFontSize);
         @include line-height($alphaLineHeight);
         @include margin(0);
@@ -84,27 +86,48 @@
   /*
     Links
   */
-    a { }
-    a:hover, a.hover {  }
-    a:focus, a.focus {  }
-    a:active, a.active {  }
+    a {
+      
+      &:active,
+      &.active {  }
+      
+      &:focus,
+      &.focus {  }
+    
+      &:hover,
+      &.hover {  }
+    
+    }
 
   /*
     Buttons
   */
-    .primaryButton {  }
-    .primaryButton:hover,
-    .primaryButton.hover,
-    .primaryButton:focus,
-    .primaryButton.focus {  }
-    .primaryButton:active,
-    .primaryButton.active {  }
+    .primaryButton { 
+
+      &:active,
+      &.active {  }
+      
+      &:focus,
+      &.focus {  }
     
-    .secondaryButton {  }
-    .secondaryButton:hover {  }
-    .secondaryButton:focus {  }
-    .secondaryButton:active {  }
+      &:hover,
+      &.hover {  }
+      
+    }
     
+    .secondaryButton { 
+
+      &:active,
+      &.active {  }
+      
+      &:focus,
+      &.focus {  }
+    
+      &:hover,
+      &.hover {  }
+      
+    }
+        
     .smallButton {  }
     .mediumButton {  }
     .largeButton {  }
@@ -112,7 +135,7 @@
   /*
     Forms
   */
-    @import '_resetForm';
+    @import '_reset-form';
     /*
       Form styling
     */
@@ -132,22 +155,22 @@
           input.text {  }
           input.checkbox {  }
           input.radio {  }
-          textarea.textarea {  }
           select.select {  }
+          textarea.textarea {  }
           
   /*
     Lists
   */
+    dd,
     dl,
     menu,
     ol,
-    ul,
-    dd {
+    ul {
       @include margin(0, 0, $alphaFontSize, 0);
       @include padding(0, 0, 0, $alphaFontSize);
     }
-      li,
-      dt {
+      dt,
+      li {
         @include margin(0, 0, $alphaFontSize, 0);
         @include padding(0);
       }
@@ -173,17 +196,15 @@
     Tools and Common Classes
   */
     hr {
+      background: none;
       border: 1px solid #000000;
       border-width: 0 0 1px 0;
+      @include box-sizing(content-box);
+      height: 1px;      
       @include margin(0, 0, $alphaFontSize);
-      -moz-box-sizing: content-box;
-      -ms-box-sizing: content-box;
-      -webkit-box-sizing: content-box;
-      box-sizing: content-box;
-      height: 1px;
       padding: 0;
-      background: none;
     }
+    
     mark {
       background: #ff0;
       color: #000;
@@ -195,7 +216,6 @@
     }
     .visuallyHidden {
       border: 0;
-      clip: rect(0 0 0 0);
       height: 1px;
       margin: -1px;
       overflow: hidden;
@@ -205,7 +225,6 @@
     }
     .visuallyHidden:active,
     .visuallyHidden:focus {
-      clip: auto;
       height: auto;
       margin: 0;
       overflow: visible;
@@ -231,18 +250,18 @@
       Body
     */
       #pageWrapper {
-        position: relative;
         overflow: hidden;
+        position: relative;
         width: 100%;
       }
 
         #outerContainer {
-          position: relative;
-          width: 100%;
-          left: 0 !important;
-          @include translate3d(0);
-          @include transitionTransform(500ms, ease);
           @include backface-visibility(hidden);
+          left: 0 !important;
+          position: relative;
+          @include transitionTransform(500ms, ease);
+          @include translate3d(0);
+          width: 100%;
         }
 
     
@@ -263,16 +282,56 @@
   /*
     Skip navigation
   */
-  .skipNavigation:active,
-  .skipNavigation:focus {
-    border: 1px solid #333333;
-    background: #ffffff;
-    display: block;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  .skipNavigation {
+    &:active,
+    &:focus {
+      background: #ffffff;
+      border: 1px solid #333333;
+      display: block;
+      left: 0;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+    }
   }
 
+  /*
+    Page Wash
+  */
+    #pageWash {
+      background: $washBackground;
+      bottom: 0;
+      cursor: pointer;
+      display: none;
+      height: 100%;
+      left: 0;
+      @include opacity(0);
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      zoom: 1;
+      visibility: hidden;
+    }
+    
+    .lt-ie7 #pageWash {
+      position: absolute;
+    }
+    /*
+      Page wash active
+    */
+      
+      .pageWashOn #pageWash {
+        @include animation(pageWash, $washFadeSpeed, 0);
+        display: block;
+        visibility: visible;
+        @include opacity($washOpacity);
+      }
 
-
+      @include fadeOpacity(pageWash, 0, $washOpacity);
+      
+      /* Hide the page scrollbar in IE6 (will need to set scroll on lightbox to compensate) */
+      .lt-ie7 .pageWashOn {
+        overflow: hidden;
+      }

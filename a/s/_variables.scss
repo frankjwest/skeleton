@@ -4,8 +4,8 @@
   /*
     Grid configuration
   */
-    $gridPadding: 10;
     $gridColumns: 16;
+    $gridPadding: 10;
     $gridMaxWidth: 1200px;
   /*
     Navigation
@@ -26,7 +26,6 @@
     $alphaFontSize: 14; /* Primary body text */
     $alphaLineHeight: 21; /* Primary line height of body text */
   
-
 /*
   Colours
 */
@@ -36,3 +35,13 @@
   $alphaColor: #333;
   $betaColor: #333;
   $gammaColor: #333;
+
+/*
+  Widgets
+*/
+  /*
+    Page Wash
+  */
+    $washBackground: #000000;
+    $washOpacity: 0.7;
+    $washFadeSpeed: 0.25s;

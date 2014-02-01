@@ -6,9 +6,9 @@
 *                                                                  *
 *******************************************************************/
 
-var fWcore = fWcore || {};
+var fwCore = fwCore || {};
 
-fWcore.launch = (function () {
+fwCore.launch = (function() {
 
 
   /*****************************************************************
@@ -21,7 +21,7 @@ fWcore.launch = (function () {
   function init() {
     $('html').removeClass('noJS'); // Enable JavaScript mode
     offScreenMenu(); // Activate off screen menu
-    fWcore.scrollToTop.init(); // Activate default scroll to top functionality
+    fwCore.scrollToTop.init(); // Activate default scroll to top functionality
   }
 
   
@@ -35,7 +35,7 @@ fWcore.launch = (function () {
 
   function offScreenMenu() {
     // Setup offscreen menu events
-    if (fWcore.settings.offScreenMenu) {
+    if (fwCore.settings.offScreenMenu) {
       var bodyDOM = $('body');
       $('.toggleMenuOn, .toggleMenuOff').on('click', function(e) {
         e.stopPropagation();
@@ -69,7 +69,7 @@ fWcore.launch = (function () {
 *                                                                  *
 *******************************************************************/
 
-fWcore.scrollToTop = (function () {
+fwCore.scrollToTop = (function() {
 
 
   /*****************************************************************
@@ -118,6 +118,12 @@ fWcore.scrollToTop = (function () {
 * Let it begin                                                     *
 *******************************************************************/
 
-$(document).ready(function () {
-  fWcore.launch.init();
+$(document).ready(function() {
+  fwCore.launch.init();
+  
+  $('.devButton').on('click', function(e) {
+    e.preventDefault();
+    fwCore.modalWindow.init($(this));
+  });
+
 });

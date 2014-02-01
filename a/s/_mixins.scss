@@ -14,24 +14,6 @@
 /*
   Padding and Margins
 */
-  @mixin margin($top: false, $right: false, $bottom: false, $left: false) {
-    @if $top == false {
-      margin: 0px;
-      margin: 0rem;
-    } @else if $right == false {
-      margin: $top + px;
-      margin: ($top / 10) + rem;
-    } @else if $bottom == false {
-      margin: $top + px $right + px;
-      margin: ($top / 10) + rem ($right / 10) + rem;
-    } @else if $left == false {
-      margin: $top + px $right + px $bottom + px;
-      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
-    } @else {
-      margin: $top + px $right + px $bottom + px $left + px;
-      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
-    }
-  }
   @mixin padding($top: false, $right: false, $bottom: false, $left: false) {
     @if $top == false {
       padding: 0px;
@@ -50,16 +32,29 @@
       padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
     }
   }
+  
+  @mixin margin($top: false, $right: false, $bottom: false, $left: false) {
+    @if $top == false {
+      margin: 0px;
+      margin: 0rem;
+    } @else if $right == false {
+      margin: $top + px;
+      margin: ($top / 10) + rem;
+    } @else if $bottom == false {
+      margin: $top + px $right + px;
+      margin: ($top / 10) + rem ($right / 10) + rem;
+    } @else if $left == false {
+      margin: $top + px $right + px $bottom + px;
+      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+    } @else {
+      margin: $top + px $right + px $bottom + px $left + px;
+      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+    }
+  }
+  
 /*
   General Styling
 */
-  @mixin translate3d($x: 0, $y: 0, $z: 0) {
-    -webkit-transform: translate3d($x, $y, $z);
-    -moz-transform: translate3d($x, $y, $z);
-    -ms-transform: translate3d($x, $y, $z);
-    -o-transform: translate3d($x, $y, $z);
-    transform: translate3d($x, $y, $z);
-  }
   @mixin backface-visibility($value) {
     -webkit-backface-visibility: $value;
     -moz-backface-visibility: $value;
@@ -67,9 +62,55 @@
     -o-backface-visibility: $value;
     backface-visibility: $value;
   }
+  
+  @mixin box-sizing($value) {
+    box-sizing: $value;
+    -moz-box-sizing: $value;
+    -ms-box-sizing: $value;
+    -webkit-box-sizing: $value;
+  }
+  
+  @mixin opacity($value) {
+    filter: alpha(opactiy=($value * 100));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+    -khtml-opacity: $value;
+    -moz-opacity: $value;
+    opacity: $value;
+  }
+  
   @mixin transitionTransform($duration, $timing: linear, $delay: 0) {
     -webkit-transition: -webkit-transform $duration $timing;
     -moz-transition: -moz-transform $duration $timing;
     -o-transition: -o-transform $duration $timing;
     transition: transform $duration $timing;
   }
+  
+  @mixin translate3d($x: 0, $y: 0, $z: 0) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    -ms-transform: translate3d($x, $y, $z);
+    -o-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+  }
+
+/*
+  Animations
+*/
+  /*
+    Core animate
+  */
+    @mixin animation($keyframeName, $duration, $delay) {
+      -moz-animation: $keyframeName $duration $delay linear forwards;
+      -o-animation: $keyframeName $duration $delay linear forwards;
+      -webkit-animation: $keyframeName $duration $delay linear forwards;
+      animation: $keyframeName $duration $delay linear forwards;
+    }
+  /*
+    Fade in / out
+  */
+    @mixin fadeOpacity($keyframeName, $startOpacity, $endOpacity) {
+      @-moz-keyframes $keyframeName { 0% { opacity: $startOpacity; } 100% { opacity: $endOpacity; } }
+      @-o-keyframes $keyframeName { 0% { opacity: $startOpacity; } 100% { opacity: $endOpacity; } }
+      @-webkit-keyframes $keyframeName { 0% { opacity: $startOpacity; } 100% { opacity: $endOpacity; } }
+      @keyframes $keyframeName { 0% { opacity: $startOpacity; } 100% { opacity: $endOpacity; } }
+    }

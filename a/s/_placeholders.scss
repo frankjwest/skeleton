@@ -1,23 +1,26 @@
 /*
   Standard clearfix for all browsers
 */
-%clearFix {
-  &:before,
-  &:after {
-    content: "";
-    display: table;
+  %clearFix {
+    &:after,
+    &:before {
+      content: "";
+      display: table;
+    }
+    
+    &:after {
+      clear: both;
+    }
+    
+    *zoom: 1;
   }
-  &:after {
-    clear: both;
-  }
-  *zoom: 1;
-}
 
 /*
   Clear a list and float the elements
 */
-  %flatList {
+  %flatList { 
     list-style: none;
+
     li {
       float: left;
     }

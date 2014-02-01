@@ -1,0 +1,99 @@
+/*
+  Form reset - Shouldn't need to be edited
+*/
+  legend {
+    white-space: normal;
+  }
+  
+  .lt-ie8 {
+    legend {
+      margin-left: -7px;
+    }
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    @include box-sizing(content-box);
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+  }
+  
+  .lt-ie8 {
+    button,
+    input,
+    select,
+    textarea {
+      vertical-align: middle;
+    }
+  }
+  
+  button,
+  input {
+    line-height: normal;
+  }
+  
+  button,
+  select {
+    text-transform: none;
+  }
+  
+  button,
+  html input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+  
+  .lt-ie8 {
+    button,
+    html input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      overflow: visible;
+    }
+  }
+
+  
+  button[disabled],
+  html input[disabled] {
+    cursor: default;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include box-sizing(border-box);
+    padding: 0;
+  }
+  
+  .lt-ie8 {
+    input[type="checkbox"],
+    input[type="radio"] {
+      height: 13px;
+      width: 13px;
+    }
+  }
+  
+  input[type="search"] {
+    -webkit-appearance: textfield;
+    @include box-sizing(content-box);
+  }
+  
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  
+  textarea {
+    overflow: auto;
+    vertical-align: top;
+  }
