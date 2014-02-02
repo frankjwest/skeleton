@@ -15,7 +15,6 @@
   input,
   select,
   textarea {
-    @include box-sizing(content-box);
     font-size: 100%;
     margin: 0;
     vertical-align: baseline;

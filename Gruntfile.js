@@ -43,8 +43,8 @@ module.exports = function(grunt) {
           lineNumbers: true
         },
         files: {
-          'a/c/dev/live.css': 'a/s/main.scss',
-          'a/c/dev/internal-style-guide.css': 'a/s/internal-style-guide.scss'
+          'a/c/live.css': 'a/s/main.scss',
+          'a/c/internal-style-guide.css': 'a/s/internal-style-guide.scss'
         }
       },
       build: {

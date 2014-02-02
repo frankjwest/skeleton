@@ -1,6 +1,6 @@
 /*
   Typography
-*/
+*/  
   @mixin font-size($sizeValue: $alphaFontSize) {
     font-size: $sizeValue + px;
     font-size: ($sizeValue / 10) + rem;
@@ -10,27 +10,33 @@
     line-height: $sizeValue + px;
     line-height: ($sizeValue / 10) + rem;
   }
+
+  @mixin letter-spacing($sizeValue: $alphaLetterSpacing) {
+    letter-spacing: $sizeValue + px;
+    letter-spacing: ($sizeValue / 10) + rem;
+  }
+
+  @mixin word-spacing($sizeValue: $alphaLetterSpacing) {
+    word-spacing: $sizeValue + px;
+    word-spacing: ($sizeValue / 10) + rem;
+  }
   
 /*
-  Padding and Margins
+   Margins, Padding, Positions and Sizes
 */
-  @mixin padding($top: false, $right: false, $bottom: false, $left: false) {
-    @if $top == false {
-      padding: 0px;
-      padding: 0rem;
-    } @else if $right == false {
-      padding: $top + px;
-      padding: ($top / 10) + rem;
-    } @else if $bottom == false {
-      padding: $top + px $right + px;
-      padding: ($top / 10) + rem ($right / 10) + rem;
-    } @else if $left == false {
-      padding: $top + px $right + px $bottom + px;
-      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
-    } @else {
-      padding: $top + px $right + px $bottom + px $left + px;
-      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
-    }
+  @mixin bottom($sizeValue) {
+    bottom: $sizeValue + px;
+    bottom: ($sizeValue / 10) + rem;
+  }
+
+  @mixin height($sizeValue) {
+    height: $sizeValue + px;
+    height: ($sizeValue / 10) + rem;
+  }
+
+  @mixin left($sizeValue) {
+    left: $sizeValue + px;
+    left: ($sizeValue / 10) + rem;
   }
   
   @mixin margin($top: false, $right: false, $bottom: false, $left: false) {
@@ -52,6 +58,40 @@
     }
   }
   
+  @mixin padding($top: false, $right: false, $bottom: false, $left: false) {
+    @if $top == false {
+      padding: 0px;
+      padding: 0rem;
+    } @else if $right == false {
+      padding: $top + px;
+      padding: ($top / 10) + rem;
+    } @else if $bottom == false {
+      padding: $top + px $right + px;
+      padding: ($top / 10) + rem ($right / 10) + rem;
+    } @else if $left == false {
+      padding: $top + px $right + px $bottom + px;
+      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+    } @else {
+      padding: $top + px $right + px $bottom + px $left + px;
+      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+    }
+  }
+
+  @mixin right($sizeValue) {
+    right: $sizeValue + px;
+    right: ($sizeValue / 10) + rem;
+  }
+
+  @mixin top($sizeValue) {
+    top: $sizeValue + px;
+    top: ($sizeValue / 10) + rem;
+  }
+
+  @mixin width($sizeValue) {
+    width: $sizeValue + px;
+    width: ($sizeValue / 10) + rem;
+  }
+  
 /*
   General Styling
 */
@@ -63,12 +103,37 @@
     backface-visibility: $value;
   }
   
+  @mixin border-radius($radius) {
+    -moz-border-radius: $radius * 1px;
+    -ms-border-radius: $radius * 1px;
+    -o-border-radius: $radius * 1px;
+    -webkit-border-radius: $radius * 1px;
+    border-radius: $radius * 1px;
+  }
+  
+  @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    box-shadow: $horizontal $vertical $blur $spread $color;
+  }
+  
   @mixin box-sizing($value) {
-    box-sizing: $value;
     -moz-box-sizing: $value;
     -ms-box-sizing: $value;
     -webkit-box-sizing: $value;
+    box-sizing: $value;
   }
+  
+  @mixin linear-gradient($fromColor, $toColor, $fallbackColor) {
+    background-color: $fallbackColor; /* Fallback Color */
+    background-image: -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+    background-image: -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+    background-image: -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: linear-gradient(top, $fromColor, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+  }  
   
   @mixin opacity($value) {
     filter: alpha(opactiy=($value * 100));

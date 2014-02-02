@@ -19,15 +19,7 @@
     /*
       Custom fonts
     */
-    /* Template, uncomment and replace `myFont` when used
-    @font-face { font-family:'myFont'; font-weight: 400; font-style: normal;
-      src: url(../fonts/myFont.eot);
-      src: url(../fonts/myFont?#iefix) format('embedded-opentype'),
-      url(../fonts/myFont.woff) format('woff'),
-      url(../fonts/myFont.ttf) format('truetype'),
-      url(../fonts/myFont.svg#OpenSansLight) format('svg');
-    }
-    */
+      @import '_fonts-custom';
     /*
       Standard
     */
@@ -152,10 +144,10 @@
             cursor: pointer;
           }
           input {  }
-          input.text {  }
           input.checkbox {  }
           input.radio {  }
           select.select {  }
+          input.text {  }
           textarea.textarea {  }
           
   /*
