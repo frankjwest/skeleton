@@ -57,6 +57,11 @@
       margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
     }
   }
+
+  @mixin min-height($sizeValue) {
+    min-height: $sizeValue + px;
+    min-height: ($sizeValue / 10) + rem;
+  }
   
   @mixin padding($top: false, $right: false, $bottom: false, $left: false) {
     @if $top == false {
@@ -103,12 +108,20 @@
     backface-visibility: $value;
   }
   
-  @mixin border-radius($radius) {
-    -moz-border-radius: $radius * 1px;
-    -ms-border-radius: $radius * 1px;
-    -o-border-radius: $radius * 1px;
-    -webkit-border-radius: $radius * 1px;
-    border-radius: $radius * 1px;
+  @mixin border-radius($radius, $radius2: false, $radius3: false, $radius4: false) {
+    @if $radius2 == false {
+      -moz-border-radius: $radius * 1px;
+      -ms-border-radius: $radius * 1px;
+      -o-border-radius: $radius * 1px;
+      -webkit-border-radius: $radius * 1px;
+      border-radius: $radius * 1px;
+    } @else {
+      -moz-border-radius: $radius * 1px  $radius2 * 1px  $radius3 * 1px  $radius4 * 1px;
+      -ms-border-radius: $radius * 1px  $radius2 * 1px  $radius3 * 1px  $radius4 * 1px;
+      -o-border-radius: $radius * 1px  $radius2 * 1px  $radius3 * 1px  $radius4 * 1px;
+      -webkit-border-radius: $radius * 1px  $radius2 * 1px  $radius3 * 1px  $radius4 * 1px;
+      border-radius: $radius * 1px  $radius2 * 1px  $radius3 * 1px  $radius4 * 1px;
+    }
   }
   
   @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
@@ -143,6 +156,14 @@
     opacity: $value;
   }
   
+  @mixin transition($attribute, $time, $timing) {
+    -moz-transition: $attribute $time $timing;
+    -ms-transition: $attribute $time $timing;
+    -o-transition: $attribute $time $timing;
+    -webkit-transition: $attribute $time $timing;
+    transition: $attribute $time $timing;
+  }
+  
   @mixin transitionTransform($duration, $timing: linear, $delay: 0) {
     -webkit-transition: -webkit-transform $duration $timing;
     -moz-transition: -moz-transform $duration $timing;
@@ -156,6 +177,14 @@
     -ms-transform: translate3d($x, $y, $z);
     -o-transform: translate3d($x, $y, $z);
     transform: translate3d($x, $y, $z);
+  }
+  
+  @mixin user-select($value) {
+    -khtml-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    -webkit-user-select: $value;
+    user-select: $value;
   }
 
 /*
