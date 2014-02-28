@@ -268,3 +268,24 @@
     .lt-ie7 .pageWashOn {
       overflow: hidden;
     }
+    
+  /*
+    Videos (YouTube)
+  */
+    .videoContainer {
+      height: 0; 
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      position: relative;
+    }
+     
+    .videoContainer iframe,
+    .videoContainer object,
+    .videoContainer embed {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
