@@ -37,15 +37,7 @@ fwCore.utilities = (function() {
       
         // Only create the wash if it doesn't exist
         if ($('#pageWash').length <= 0) {
-          $('body').append('<div id="pageWash"></div>');
-          
-          // Add close event to the wash on click
-          var pageWashDOM = $('#pageWash');
-          
-          pageWashDOM.on('click', function() {
-            hide();
-          });
-          
+          $('body').append('<div id="pageWash"></div>');          
         }
         
         // Set pageWash to created

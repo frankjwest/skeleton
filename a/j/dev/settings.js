@@ -20,6 +20,8 @@ var fwCore = fwCore || {};
 
 fwCore.settings = {
   offScreenMenu: true,
+  modalWindow: true,
+  owlCarousel: true,
   isSupported: {},
   dom: {
     pageWash: false,

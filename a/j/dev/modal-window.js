@@ -14,11 +14,6 @@
 * data-container-id :Override option to use custom window ID       *
 *                    Default is `modalWindow`                      *
 *                                                                  *
-* data-position :    Choose which position styling we want to      *
-*                    use.                                          *
-*                    `fullHeightfixed`: 90% height + auto scroll   *
-*                    Dafault: auto height with absolute position   *
-*                                                                  *
 * data-content :     ID of container which holds the content to    *
 *                    show in this lightbox.                        *
 *                    Not needed if data-ajax is set.               *
@@ -94,32 +89,11 @@ fwCore.modalWindow = (function() {
   /*****************************************************************
   * showWindow                                               v 1.0 *
   *                                                                *
-  * When a window is requested to be shown all styles are reset    *
-  * and new ones applied. These can be overridden using options on *
-  * the launcher.                                                  *
-  *                                                                *
-  * We use the style attribute in this `strange` way to make it    *
-  * easier to inject IE fixed directly into the DOM as needed.     *
-  *                                                                *
-  *                                                                *
   * An event is triggered once the window is visible.              *
   *                                                                *
   *****************************************************************/
 
   function showWindow(windowDOM, launcherDOM) {
-    // Reset all styles
-    windowDOM.removeAttr('style');
-    
-    // Add new styles
-    var fullHeightFixed = 'bottom: 5%; height: auto; overflow-y: auto; position: fixed; top: 5%; *position: absolute; *height: 90%;';
-    var fluidHeightAbsolute = 'position: absolute; top: '+(50 + $(window).scrollTop())+'px; *height: 90%; *overflow-y: auto;';
-    
-    if (launcherDOM.data('position') == 'fullHeightFixed') {
-      windowDOM.attr({'style' : fullHeightFixed});
-    } else {
-      windowDOM.attr({'style' : fluidHeightAbsolute});
-    }
-
     // Show window
     windowDOM.show();
     
@@ -204,7 +178,7 @@ fwCore.modalWindow = (function() {
       html += '    <a href="" class="visuallyHidden endOfWindow">Jump to top of window</a>';
       html += '  </div>';
       html += '</div>';
-      $('body').append(html);
+      $('#pageWash').append(html);
       
       var thisWindowDOM = $('#'+containerID);
       var modalContent = $('.modalContent', thisWindowDOM);

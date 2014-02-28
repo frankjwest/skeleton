@@ -1,0 +1,19 @@
+/*
+  Lists
+*/
+  dd,
+  dl,
+  menu,
+  ol,
+  ul {
+    @include margin(0, 0, $alphaFontSize, 0);
+    @include padding(0, 0, 0, $alphaFontSize);
+  }
+    dt,
+    li {
+      @include margin(0, 0, $alphaFontSize, 0);
+      @include padding(0);
+    }
+      li ul {
+        @include padding($alphaFontSize, 0, 0, $alphaFontSize);
+      }

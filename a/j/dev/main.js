@@ -22,6 +22,19 @@ fwCore.launch = (function() {
     $('html').removeClass('noJS'); // Enable JavaScript mode
     offScreenMenu(); // Activate off screen menu
     fwCore.scrollToTop.init(); // Activate default scroll to top functionality
+    
+    /* If we're using modal windows then initialise them */
+    if (fwCore.settings.modalWindow) {
+      $('.launchWindow').on('click', function(e) {
+        e.preventDefault();
+        fwCore.modalWindow.init($(this));
+      });
+    }
+    
+    /* If we're using carousels then initialise them */
+    if (fwCore.settings.owlCarousel) {
+      fwCore.owlCustom.init();
+    }
   }
 
   
@@ -120,10 +133,4 @@ fwCore.scrollToTop = (function() {
 
 $(document).ready(function() {
   fwCore.launch.init();
-  
-  $('.devButton').on('click', function(e) {
-    e.preventDefault();
-    fwCore.modalWindow.init($(this));
-  });
-
 });

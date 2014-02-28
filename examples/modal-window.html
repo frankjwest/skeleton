@@ -15,7 +15,7 @@
     <!-- Meta -->
     <meta name="description" content="">
     <!-- Open Graph -->
-    <meta property="og:image" content="/a/i/icons/opengraph.png" />
+    <meta property="og:image" content="../a/i/icons/opengraph.png" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="" />
     <meta property="og:title" content="" />
@@ -28,41 +28,41 @@
     <meta name="twitter:url" content=""/>
     <meta name="twitter:title" content="">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="/a/i/icons/twitter-card.png">	
+    <meta name="twitter:image" content="../a/i/icons/twitter-card.png">	
     
 <!-- Icons -->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/a/i/icons/favicon.ico" />
-    <link rel="icon" href="/a/i/icons/favicon-32.png" sizes="32x32">
+    <link rel="shortcut icon" href="../a/i/icons/favicon.ico" />
+    <link rel="icon" href="../a/i/icons/favicon-32.png" sizes="32x32">
     <!-- Touch icon for iOS 2.0+ and Android 2.1+ -->
     <link rel="apple-touch-icon-precomposed" href="path/to/favicon-152.png">
     <!-- IE 10 Metro tile icon (Metro equivalent of apple-touch-icon) -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/a/i/icons/favicon-144.png">
+    <meta name="msapplication-TileImage" content="../a/i/icons/favicon-144.png">
     <!-- Opera speed dial / Opera Coast icon -->
-    <link rel="icon" sizes="195x195" href="/a/i/icons/favicon-195.png">
-    <link rel="icon" sizes="228x228" href="/a/i/icons/favicon-228.png">
+    <link rel="icon" sizes="195x195" href="../a/i/icons/favicon-195.png">
+    <link rel="icon" sizes="228x228" href="../a/i/icons/favicon-228.png">
     <!-- For iPad with high-resolution Retina display running iOS = 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/a/i/icons/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../a/i/icons/favicon-152.png">
     <!-- For iPad with high-resolution Retina display running iOS = 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/a/i/icons/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../a/i/icons/favicon-144.png">
     <!-- Chrome web store -->
-    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="/a/i/icons/favicon-128.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="../a/i/icons/favicon-128.png">
     <!-- For iPhone with high-resolution Retina display running iOS = 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/a/i/icons/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../a/i/icons/favicon-120.png">
     <!-- For iPhone with high-resolution Retina display running iOS = 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/a/i/icons/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../a/i/icons/favicon-114.png">
     <!-- Google TV -->
-    <link rel="apple-touch-icon-precomposed" sizes="96x96" href="/a/i/icons/favicon-96.png">
+    <link rel="apple-touch-icon-precomposed" sizes="96x96" href="../a/i/icons/favicon-96.png">
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/a/i/icons/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../a/i/icons/favicon-72.png">
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="/a/i/icons/favicon-57.png">
+    <link rel="apple-touch-icon-precomposed" href="../a/i/icons/favicon-57.png">
     
 <!-- Files -->
-    <link rel="stylesheet" href="/a/c/dev/live.css">
-    <link rel="stylesheet" href="/a/c/dev/internal-style-guide.css">
-    <!--[if lt IE 9]><script src="/a/j/vendor/html5shiv-printshiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../a/c/live.css">
+    <link rel="stylesheet" href="../a/c/internal-style-guide.css">
+    <!--[if lt IE 9]><script src="../a/j/vendor/html5shiv-printshiv.js"></script><![endif]-->
 
   </head>
   <body>
@@ -74,11 +74,11 @@
           <a class="toggleMenuOn" href="#">Show menu</a>
           <a class="visuallyHidden skipNavigation" href="#main">Skip to content</a>
           
-          <a class="devButton" href="#" data-content="modalWindowContent">Default and Local</a> | 
-          <a class="devButton" href="#" data-container-id="customBox" data-position="fullHeightFixed" data-ajax="/examples/ajax/simple-html.html">Fixed and ajax</a> |
-          <a class="devButton" href="#" data-ajax="/examples/ajax/simple-html.html" data-data="{'sample':'data'}">Default, ajax with data</a> |
-          <a class="devButton" href="#" data-ajax="/examples/ajax/does-not-exist.html">Ajax - File does not exist</a> |
-          <a class="devButton" href="#">Error: No content</a>
+          <a class="launchWindow" href="#" data-content="modalWindowContent">Local</a> | 
+          <a class="launchWindow" href="#" data-container-id="customBox" data-ajax="/examples/ajax/simple-html.html">Ajax</a> |
+          <a class="launchWindow" href="#" data-ajax="/examples/ajax/simple-html.html" data-data="{'sample':'data'}">Ajax with data</a> |
+          <a class="launchWindow" href="#" data-ajax="/examples/ajax/does-not-exist.html">Ajax - File does not exist</a> |
+          <a class="launchWindow" href="#">Error: No content</a>
           
         </header>
 
@@ -124,7 +124,7 @@
           
           <section class="grid">
             <div class="column col-16-16">
-              <h1 class="primaryHeader">Table, links and buttons</h1>
+              <h1 class="primaryHeader">Table, links and buttons <a class="launchWindow" href="#" data-content="modalWindowContent">Modal Window</a></h1>
               <hr>
               <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
@@ -271,13 +271,14 @@
 
     <!-- Template: Content holder for modal window -->
     <script id="modalWindowContent" type="text/template">
-      <div>Content for modal window</div>
+      <div>Content for modal window<br></div>
+      <div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div><div>Content for modal window<br></div>
     </script>
 
     
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/a/j/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="/a/j/live.js"></script>
+    <script>window.jQuery || document.write('<script src="../a/j/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="../a/j/live.js"></script>
   </body>
 </html>

@@ -5,10 +5,17 @@
 @import '_grid';
 @import '_navigation';
 
+@import '_buttons';
+@import '_form_reset';
+@import '_form';
+@import '_fonts_custom';
+@import '_lists';
+
 /*
   Plugins
 */
-  @import '_modal-window';
+  @import '_modal_window';
+  @import '_owl';
 
 /*
   Base
@@ -19,7 +26,6 @@
     /*
       Custom fonts
     */
-      @import '_fonts-custom';
     /*
       Standard
     */
@@ -90,85 +96,6 @@
       &.hover {  }
     
     }
-
-  /*
-    Buttons
-  */
-    .primaryButton { 
-
-      &:active,
-      &.active {  }
-      
-      &:focus,
-      &.focus {  }
-    
-      &:hover,
-      &.hover {  }
-      
-    }
-    
-    .secondaryButton { 
-
-      &:active,
-      &.active {  }
-      
-      &:focus,
-      &.focus {  }
-    
-      &:hover,
-      &.hover {  }
-      
-    }
-        
-    .smallButton {  }
-    .mediumButton {  }
-    .largeButton {  }
-  
-  /*
-    Forms
-  */
-    @import '_reset-form';
-    /*
-      Form styling
-    */
-      form {
-        border: 0;
-      }
-        fieldset {
-          border: 0;
-        }
-          legend  {
-            border: 0;
-          }
-          label {
-            cursor: pointer;
-          }
-          input {  }
-          input.checkbox {  }
-          input.radio {  }
-          select.select {  }
-          input.text {  }
-          textarea.textarea {  }
-          
-  /*
-    Lists
-  */
-    dd,
-    dl,
-    menu,
-    ol,
-    ul {
-      @include margin(0, 0, $alphaFontSize, 0);
-      @include padding(0, 0, 0, $alphaFontSize);
-    }
-      dt,
-      li {
-        @include margin(0, 0, $alphaFontSize, 0);
-        @include padding(0);
-      }
-        li ul {
-          @include padding($alphaFontSize, 0, 0, $alphaFontSize);
-        }
   
   /*
     Highlighting
@@ -290,14 +217,23 @@
   /*
     Page Wash
   */
+  
+    .pageWashOn {
+      height: 100%;    
+      margin: 0px;
+      overflow: hidden;
+      padding: 0px;
+      width: 100%;
+    }
+    
     #pageWash {
       background: $washBackground;
       bottom: 0;
-      cursor: pointer;
       display: none;
       height: 100%;
       left: 0;
       @include opacity(0);
+      overflow-y: auto;
       position: fixed;
       right: 0;
       top: 0;
@@ -306,24 +242,29 @@
       zoom: 1;
       visibility: hidden;
     }
-    
-    .lt-ie7 #pageWash {
+    .lt-ie10 #pageWash {
+      overflow: hidden;
       position: absolute;
+      background: 0 0 repeat url(../i/plugins/wash.png);
     }
     /*
       Page wash active
     */
-      
+    
       .pageWashOn #pageWash {
         @include animation(pageWash, $washFadeSpeed, 0);
         display: block;
         visibility: visible;
-        @include opacity($washOpacity);
+        @include opacity(1);
       }
 
-      @include fadeOpacity(pageWash, 0, $washOpacity);
-      
-      /* Hide the page scrollbar in IE6 (will need to set scroll on lightbox to compensate) */
-      .lt-ie7 .pageWashOn {
-        overflow: hidden;
-      }
+      @include fadeOpacity(pageWash, 0, 1);
+    
+    .lt-ie10 .pageWashOn {
+      overflow-y: auto;
+    }
+     
+    /* Hide the page scrollbar in IE6 (will need to set scroll on lightbox to compensate) */
+    .lt-ie7 .pageWashOn {
+      overflow: hidden;
+    }

@@ -1,0 +1,38 @@
+.modalWindow {
+  background: #ffffff;
+  @include animation(modalWindow, $washFadeSpeed, 0);
+  border: 1px solid #999;
+  @include border-radius(3);
+  @include box-shadow(0, 1px, 10px, 0px, #666);
+  display: none;
+  left: 50%;
+  margin: 50px 0 50px -390px;
+  @include opacity(1);
+  position: relative;
+  visibility: visible;
+  width: 780px;
+  z-index: 1001;
+}
+
+@include fadeOpacity(modalWindow, 0, 1);
+
+@media screen and (max-width: 800px) {
+  .modalWindow {
+    border-left: none;
+    border-right: none;
+    left: 0;
+    margin: 50px 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modalWindow {
+    border-bottom: none;
+    border-top: none;
+    left: 0;
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+  }
+}
