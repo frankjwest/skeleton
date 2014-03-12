@@ -771,7 +771,7 @@ li ul {
 */
 /* line 1, ../s/_modal_window.scss */
 .modalWindow {
-  background: #ffffff;
+  background: #fff;
   -moz-animation: modalWindow 0.25s 0 linear forwards;
   -o-animation: modalWindow 0.25s 0 linear forwards;
   -webkit-animation: modalWindow 0.25s 0 linear forwards;
@@ -1143,26 +1143,33 @@ blockquote {
   Highlighting
 */
 /* line 103, ../s/main.scss */
-::-moz-selection {
+::-webkit-selection {
   background: #323232;
-  color: #ffffff;
+  color: #fff;
   text-shadow: none;
 }
 
 /* line 108, ../s/main.scss */
+::-moz-selection {
+  background: #323232;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 113, ../s/main.scss */
 ::selection {
   background: #323232;
-  color: #ffffff;
+  color: #fff;
   text-shadow: none;
 }
 
 /*
   Tools and Common Classes
 */
-/* line 117, ../s/main.scss */
+/* line 122, ../s/main.scss */
 hr {
   background: none;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-width: 0 0 1px 0;
   -moz-box-sizing: content-box;
   -ms-box-sizing: content-box;
@@ -1174,19 +1181,19 @@ hr {
   padding: 0;
 }
 
-/* line 127, ../s/main.scss */
+/* line 132, ../s/main.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 132, ../s/main.scss */
+/* line 137, ../s/main.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 136, ../s/main.scss */
+/* line 141, ../s/main.scss */
 .visuallyHidden {
   border: 0;
   height: 1px;
@@ -1197,7 +1204,7 @@ mark {
   width: 1px;
 }
 
-/* line 146, ../s/main.scss */
+/* line 151, ../s/main.scss */
 .visuallyHidden:active,
 .visuallyHidden:focus {
   height: auto;
@@ -1207,7 +1214,7 @@ mark {
   width: auto;
 }
 
-/* line 153, ../s/main.scss */
+/* line 158, ../s/main.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1224,14 +1231,14 @@ mark {
 /*
   Body
 */
-/* line 171, ../s/main.scss */
+/* line 176, ../s/main.scss */
 #pageWrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
-/* line 177, ../s/main.scss */
+/* line 182, ../s/main.scss */
 #outerContainer {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -1264,13 +1271,14 @@ mark {
 /*
   Skip navigation
 */
-/* line 206, ../s/main.scss */
+/* line 211, ../s/main.scss */
 .skipNavigation:active, .skipNavigation:focus {
-  background: #ffffff;
-  border: 1px solid #333333;
+  background: #fff;
+  border: 1px solid #333;
   display: block;
   left: 0;
   padding: 10px;
+  padding: 1rem;
   position: absolute;
   top: 0;
 }
@@ -1278,16 +1286,16 @@ mark {
 /*
   Page Wash
 */
-/* line 221, ../s/main.scss */
+/* line 226, ../s/main.scss */
 .pageWashOn {
   height: 100%;
-  margin: 0px;
+  margin: 0;
   overflow: hidden;
-  padding: 0px;
+  padding: 0;
   width: 100%;
 }
 
-/* line 229, ../s/main.scss */
+/* line 234, ../s/main.scss */
 #pageWash {
   background: rgba(100, 100, 100, 0.6);
   bottom: 0;
@@ -1309,7 +1317,7 @@ mark {
   visibility: hidden;
 }
 
-/* line 245, ../s/main.scss */
+/* line 251, ../s/main.scss */
 .lt-ie10 #pageWash {
   overflow: hidden;
   position: absolute;
@@ -1319,7 +1327,7 @@ mark {
 /*
   Page wash active
 */
-/* line 254, ../s/main.scss */
+/* line 260, ../s/main.scss */
 .pageWashOn #pageWash {
   -moz-animation: pageWash 0.25s 0 linear forwards;
   -o-animation: pageWash 0.25s 0 linear forwards;
@@ -1382,13 +1390,13 @@ mark {
   }
 }
 
-/* line 263, ../s/main.scss */
+/* line 269, ../s/main.scss */
 .lt-ie10 .pageWashOn {
   overflow-y: auto;
 }
 
 /* Hide the page scrollbar in IE6 (will need to set scroll on lightbox to compensate) */
-/* line 268, ../s/main.scss */
+/* line 274, ../s/main.scss */
 .lt-ie7 .pageWashOn {
   overflow: hidden;
 }

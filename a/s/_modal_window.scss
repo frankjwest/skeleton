@@ -1,5 +1,5 @@
 .modalWindow {
-  background: #ffffff;
+  background: #fff;
   @include animation(modalWindow, $washFadeSpeed, 0);
   border: 1px solid #999;
   @include border-radius(3);

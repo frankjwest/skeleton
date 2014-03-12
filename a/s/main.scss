@@ -55,8 +55,8 @@
         font-family: $alphaFontFamily;
         @include font-size($alphaFontSize);
         @include line-height($alphaLineHeight);
-        @include margin(0);
-        @include padding(0);
+        @include margin();
+        @include padding();
       }
 
       .primaryHeader {
@@ -76,7 +76,7 @@
       pre,
       blockquote {
         @include margin(0, 0, $alphaFontSize, 0);
-        @include padding(0);
+        @include padding();
       }
       
       figcaption {  }
@@ -100,14 +100,19 @@
   /*
     Highlighting
   */
+    ::-webkit-selection {
+      background: #323232;
+      color: #fff;
+      text-shadow: none;
+    }
     ::-moz-selection {
       background: #323232;
-      color: #ffffff;
+      color: #fff;
       text-shadow: none;
     }
     ::selection {
       background: #323232;
-      color: #ffffff;
+      color: #fff;
       text-shadow: none;
     }
     
@@ -116,7 +121,7 @@
   */
     hr {
       background: none;
-      border: 1px solid #000000;
+      border: 1px solid #000;
       border-width: 0 0 1px 0;
       @include box-sizing(content-box);
       height: 1px;      
@@ -204,11 +209,11 @@
   .skipNavigation {
     &:active,
     &:focus {
-      background: #ffffff;
-      border: 1px solid #333333;
+      background: #fff;
+      border: 1px solid #333;
       display: block;
       left: 0;
-      padding: 10px;
+      @include padding(10);
       position: absolute;
       top: 0;
     }
@@ -220,9 +225,9 @@
   
     .pageWashOn {
       height: 100%;    
-      margin: 0px;
+      margin: 0;
       overflow: hidden;
-      padding: 0px;
+      padding: 0;
       width: 100%;
     }
     
@@ -242,6 +247,7 @@
       zoom: 1;
       visibility: hidden;
     }
+    
     .lt-ie10 #pageWash {
       overflow: hidden;
       position: absolute;
