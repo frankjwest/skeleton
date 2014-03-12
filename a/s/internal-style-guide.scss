@@ -15,7 +15,7 @@ body {
   
   .styleGuideBlock {
     border: 2px solid #ccc;
-    @include height(150);
+    @include height(170);
     @include margin(0, 10, 10, 0);
     text-align: center;
     @include width(150);
@@ -32,6 +32,7 @@ body {
     .styleName {
       background: #ccc;
       display: block;
+      @include height(50);
       @include line-height(20);
       @include padding(5);
     }
@@ -43,3 +44,15 @@ body {
     @extend %flatList;
     padding: 0;
   }
+  
+/*
+  Colours
+*/
+.styleAlphaColor { background: $alphaColor; }
+.styleAlphaColorBorder { background: $alphaColorBorder; }
+
+.styleBetaColor { background: $betaColor; }
+.styleBetaColorBorder { background: $betaColorBorder; }
+
+.styleGammaColor { background: $gammaColor; }
+.styleGammaColorBorder { background: $gammaColorBorder; }

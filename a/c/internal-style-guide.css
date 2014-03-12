@@ -1421,8 +1421,8 @@ body {
 /* line 16, ../s/internal-style-guide.scss */
 .styleGuideBlock {
   border: 2px solid #ccc;
-  height: 150px;
-  height: 15rem;
+  height: 170px;
+  height: 17rem;
   margin: 0px 10px 10px 0px;
   margin: 0rem 1rem 1rem 0rem;
   text-align: center;
@@ -1445,13 +1445,48 @@ body {
 .styleGuideBlock .styleName {
   background: #ccc;
   display: block;
+  height: 50px;
+  height: 5rem;
   line-height: 20px;
   line-height: 2rem;
   padding: 5px;
   padding: 0.5rem;
 }
 
-/* line 41, ../s/internal-style-guide.scss */
+/* line 42, ../s/internal-style-guide.scss */
 .styleFlatList {
   padding: 0;
+}
+
+/*
+  Colours
+*/
+/* line 51, ../s/internal-style-guide.scss */
+.styleAlphaColor {
+  background: #333333;
+}
+
+/* line 52, ../s/internal-style-guide.scss */
+.styleAlphaColorBorder {
+  background: #222222;
+}
+
+/* line 54, ../s/internal-style-guide.scss */
+.styleBetaColor {
+  background: #cccccc;
+}
+
+/* line 55, ../s/internal-style-guide.scss */
+.styleBetaColorBorder {
+  background: #bbbbbb;
+}
+
+/* line 57, ../s/internal-style-guide.scss */
+.styleGammaColor {
+  background: #666666;
+}
+
+/* line 58, ../s/internal-style-guide.scss */
+.styleGammaColorBorder {
+  background: #444444;
 }
