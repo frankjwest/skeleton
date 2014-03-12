@@ -799,48 +799,48 @@ li ul {
 }
 
 @-moz-keyframes modalWindow {
-  /* line 177, ../s/_mixins.scss */
+  /* line 202, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 177, ../s/_mixins.scss */
+  /* line 202, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes modalWindow {
-  /* line 178, ../s/_mixins.scss */
+  /* line 203, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 178, ../s/_mixins.scss */
+  /* line 203, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes modalWindow {
-  /* line 179, ../s/_mixins.scss */
+  /* line 204, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 179, ../s/_mixins.scss */
+  /* line 204, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes modalWindow {
-  /* line 180, ../s/_mixins.scss */
+  /* line 205, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 180, ../s/_mixins.scss */
+  /* line 205, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
@@ -1334,48 +1334,48 @@ mark {
 }
 
 @-moz-keyframes pageWash {
-  /* line 177, ../s/_mixins.scss */
+  /* line 202, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 177, ../s/_mixins.scss */
+  /* line 202, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes pageWash {
-  /* line 178, ../s/_mixins.scss */
+  /* line 203, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 178, ../s/_mixins.scss */
+  /* line 203, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes pageWash {
-  /* line 179, ../s/_mixins.scss */
+  /* line 204, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 179, ../s/_mixins.scss */
+  /* line 204, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes pageWash {
-  /* line 180, ../s/_mixins.scss */
+  /* line 205, ../s/_mixins.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 180, ../s/_mixins.scss */
+  /* line 205, ../s/_mixins.scss */
   100% {
     opacity: 1;
   }
@@ -1400,16 +1400,16 @@ body {
 /* line 7, ../s/internal-style-guide.scss */
 .grid {
   background: #fff;
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
+  margin: 0px auto 10px;
+  margin: 0rem auto 1rem;
 }
 
-/* line 13, ../s/internal-style-guide.scss */
+/* line 12, ../s/internal-style-guide.scss */
 .styleGuidePadding td {
   padding: 5px;
 }
 
-/* line 17, ../s/internal-style-guide.scss */
+/* line 16, ../s/internal-style-guide.scss */
 .styleGuideBlock {
   border: 2px solid #ccc;
   height: 150px;
@@ -1420,7 +1420,7 @@ body {
   width: 150px;
   width: 15rem;
 }
-/* line 24, ../s/internal-style-guide.scss */
+/* line 23, ../s/internal-style-guide.scss */
 .styleGuideBlock .styleInfo {
   font-size: 16px;
   font-size: 1.6rem;
@@ -1429,7 +1429,7 @@ body {
   height: 11.8rem;
   text-align: center;
 }
-/* line 31, ../s/internal-style-guide.scss */
+/* line 30, ../s/internal-style-guide.scss */
 .styleGuideBlock .styleName {
   background: #ccc;
   display: block;
@@ -1439,7 +1439,7 @@ body {
   padding: 0.5rem;
 }
 
-/* line 40, ../s/internal-style-guide.scss */
+/* line 39, ../s/internal-style-guide.scss */
 .styleFlatList {
   padding: 0;
 }

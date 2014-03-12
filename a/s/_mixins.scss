@@ -47,14 +47,39 @@
       margin: $top + px;
       margin: ($top / 10) + rem;
     } @else if $bottom == false {
-      margin: $top + px $right + px;
-      margin: ($top / 10) + rem ($right / 10) + rem;
+      @if $right == auto {
+        margin: $top + px auto;
+        margin: ($top / 10) + rem auto;      
+      } @else {
+        margin: $top + px $right + px;
+        margin: ($top / 10) + rem ($right / 10) + rem;
+      }
     } @else if $left == false {
-      margin: $top + px $right + px $bottom + px;
-      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+      @if $right == auto {
+        margin: $top + px auto $bottom + px;
+        margin: ($top / 10) + rem auto ($bottom / 10) + rem;      
+      } @else {
+        margin: $top + px $right + px $bottom + px;
+        margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem;
+      }
     } @else {
-      margin: $top + px $right + px $bottom + px $left + px;
-      margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+      @if $right == auto {
+        @if $left == auto {
+          margin: $top + px auto $bottom + px auto;
+          margin: ($top / 10) + rem auto ($bottom / 10) + rem auto; 
+        } @else {
+          margin: $top + px auto $bottom + px $left + px;
+          margin: ($top / 10) + rem auto ($bottom / 10) + rem ($left / 10) + rem; 
+        }   
+      } @else {
+        @if $left == auto {
+          margin: $top + px $right + px $bottom + px auto;
+          margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem auto;
+        } @else {
+          margin: $top + px $right + px $bottom + px $left + px;
+          margin: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+        }   
+      }
     }
   }
 
