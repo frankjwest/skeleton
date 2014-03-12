@@ -96,17 +96,42 @@
       padding: $top + px;
       padding: ($top / 10) + rem;
     } @else if $bottom == false {
-      padding: $top + px $right + px;
-      padding: ($top / 10) + rem ($right / 10) + rem;
+      @if $right == auto {
+        padding: $top + px auto;
+        padding: ($top / 10) + rem auto;      
+      } @else {
+        padding: $top + px $right + px;
+        padding: ($top / 10) + rem ($right / 10) + rem;
+      }
     } @else if $left == false {
-      padding: $top + px $right + px $bottom + px;
-      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem
+      @if $right == auto {
+        padding: $top + px auto $bottom + px;
+        padding: ($top / 10) + rem auto ($bottom / 10) + rem;      
+      } @else {
+        padding: $top + px $right + px $bottom + px;
+        padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem;
+      }
     } @else {
-      padding: $top + px $right + px $bottom + px $left + px;
-      padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+      @if $right == auto {
+        @if $left == auto {
+          padding: $top + px auto $bottom + px auto;
+          padding: ($top / 10) + rem auto ($bottom / 10) + rem auto; 
+        } @else {
+          padding: $top + px auto $bottom + px $left + px;
+          padding: ($top / 10) + rem auto ($bottom / 10) + rem ($left / 10) + rem; 
+        }   
+      } @else {
+        @if $left == auto {
+          padding: $top + px $right + px $bottom + px auto;
+          padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem auto;
+        } @else {
+          padding: $top + px $right + px $bottom + px $left + px;
+          padding: ($top / 10) + rem ($right / 10) + rem ($bottom / 10) + rem ($left / 10) + rem;
+        }   
+      }
     }
   }
-
+  
   @mixin right($sizeValue) {
     right: $sizeValue + px;
     right: ($sizeValue / 10) + rem;
