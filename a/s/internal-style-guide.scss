@@ -1,16 +1,45 @@
+@import 'main';
+
 body {
-  background: #cccccc;
+  background: #ccc;
 }
 
   .grid {
-    background: #ffffff;
-    border-radius: 10px;
-    margin: 10px auto;
-    margin: 1rem auto;    
-    padding: 10px 0;
-    padding: 1rem 0;
+    background: #fff;
+    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
   
   .styleGuidePadding td {
     padding: 5px;
   }
+  
+  .styleGuideBlock {
+    border: 2px solid #ccc;
+    @include height(150);
+    @include margin(0, 10, 10, 0);
+    text-align: center;
+    @include width(150);
+    
+    .styleInfo {
+      @include font-size(16);
+      display: block;
+      @include height(118);
+      text-align: center;
+    }
+    
+    .styleName {
+      background: #ccc;
+      display: block;
+      @include line-height(20);
+      @include padding(5);
+    }
+    
+  }
+  
+  .styleFlatList {
+    @extend %clearList;
+    @extend %flatList;
+    padding: 0;
+  }
+  
