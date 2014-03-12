@@ -21,9 +21,11 @@ body {
     @include width(150);
     
     .styleInfo {
-      @include font-size(16);
+      @include font-size(32);
+      font-weight: bold;
       display: block;
       @include height(118);
+      @include line-height(118);
       text-align: center;
     }
     
@@ -37,8 +39,7 @@ body {
   }
   
   .styleFlatList {
-    @extend %clearList;
+    @extend %clearFix;
     @extend %flatList;
     padding: 0;
   }
-  

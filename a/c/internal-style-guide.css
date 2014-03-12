@@ -53,16 +53,16 @@
   Standard clearfix for all browsers
 */
 /* line 4, ../s/_placeholders.scss */
-.grid {
+.grid, .styleFlatList {
   *zoom: 1;
 }
 /* line 6, ../s/_placeholders.scss */
-.grid:after, .grid:before {
+.grid:after, .styleFlatList:after, .grid:before, .styleFlatList:before {
   content: "";
   display: table;
 }
 /* line 11, ../s/_placeholders.scss */
-.grid:after {
+.grid:after, .styleFlatList:after {
   clear: both;
 }
 
@@ -1431,14 +1431,17 @@ body {
 }
 /* line 23, ../s/internal-style-guide.scss */
 .styleGuideBlock .styleInfo {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: bold;
   display: block;
   height: 118px;
   height: 11.8rem;
+  line-height: 118px;
+  line-height: 11.8rem;
   text-align: center;
 }
-/* line 30, ../s/internal-style-guide.scss */
+/* line 32, ../s/internal-style-guide.scss */
 .styleGuideBlock .styleName {
   background: #ccc;
   display: block;
@@ -1448,7 +1451,7 @@ body {
   padding: 0.5rem;
 }
 
-/* line 39, ../s/internal-style-guide.scss */
+/* line 41, ../s/internal-style-guide.scss */
 .styleFlatList {
   padding: 0;
 }
