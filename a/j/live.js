@@ -90,17 +90,11 @@ fwCore.launch = (function() {
     if (fwCore.settings.offScreenMenu) {
       var bodyDOM = $('body');
       $('.toggleMenuOn, .toggleMenuOff').on('click', function(e) {
-        e.stopPropagation();
         e.preventDefault();
         if (bodyDOM.hasClass('showMenu')) {
           bodyDOM.removeClass('showMenu')
-          $(document).off('click.menuVisible');
         } else {
           bodyDOM.addClass('showMenu')
-          $(document).on('click.menuVisible', function(e) {
-            e.preventDefault();
-            $('.toggleMenuOn').trigger('click');
-          });
         }
       });
     }
