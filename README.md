@@ -1,7 +1,7 @@
 Skeleton
 ========
 
-A startting point for all projects.
+A starting point for all projects.
 
 
 
